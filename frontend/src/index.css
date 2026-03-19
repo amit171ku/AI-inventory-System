@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Variables — light mode ─────────────────────────────── */
+:root {
+  --background:        #ffffff;
+  --foreground:        #0f172a;
+
+  --card:              #ffffff;
+  --card-foreground:   #0f172a;
+
+  --muted:             #f1f5f9;
+  --muted-foreground:  #64748b;
+
+  --border:            #e2e8f0;
+  --input:             #e2e8f0;
+
+  --primary:           #6366f1;
+  --primary-foreground:#ffffff;
+}
+
+/* ── CSS Variables — dark mode ──────────────────────────────── */
+.dark {
+  --background:        #080b14;
+  --foreground:        #e8eaf0;
+
+  --card:              #0d1117;
+  --card-foreground:   #e8eaf0;
+
+  --muted:             #1e2433;
+  --muted-foreground:  #64748b;
+
+  --border:            #1e2433;
+  --input:             #1e2433;
+
+  --primary:           #6366f1;
+  --primary-foreground:#ffffff;
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+body {
+  background-color: var(--background);
+  color:            var(--foreground);
+  font-family:      'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Tailwind semantic mappings ─────────────────────────────── */
+@layer base {
+  .bg-background      { background-color: var(--background); }
+  .bg-card            { background-color: var(--card); }
+  .bg-muted           { background-color: var(--muted); }
+  .text-foreground    { color: var(--foreground); }
+  .text-muted-foreground { color: var(--muted-foreground); }
+  .border-border      { border-color: var(--border); }
+  .border-input       { border-color: var(--input); }
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted-foreground); }
+
+/* ── Selection ──────────────────────────────────────────────── */
+::selection { background: rgba(99,102,241,0.2); }
