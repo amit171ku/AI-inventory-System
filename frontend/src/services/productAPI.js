@@ -10,8 +10,9 @@ export const createUser           = (data)     => API.post("/auth/create-user", 
 export const getUsers             = ()         => API.get("/auth/users");
 export const updateUser           = (id, data) => API.put(`/auth/users/${id}`,      data);
 export const deleteUser           = (id)       => API.delete(`/auth/users/${id}`);
-export const requestPasswordReset = (data)     => API.post("/auth/forgot-password", data);
-export const resetPassword        = (data)     => API.post("/auth/reset-password",  data);
+export const forgotPassword       = (email)               => API.post("/auth/forgot-password", { email });
+export const verifyOtp            = (email, otp)          => API.post("/auth/verify-otp", { email, otp });
+export const resetPassword        = (email, newPassword)  => API.post("/auth/reset-password", { email, newPassword });
 
 // ── Products ───────────────────────────────────────────────────────────────
 export const getProducts    = (params) => API.get("/products",       { params });  // supports ?category=&search=&low_stock=
