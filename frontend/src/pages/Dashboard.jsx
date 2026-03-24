@@ -92,7 +92,9 @@ function Dashboard() {
         <h1 className="text-2xl font-bold text-foreground truncate">Dashboard</h1>
         {analytics?.generated_at && (
           <span className="text-xs text-muted-foreground shrink-0 ml-4">
-            Updated {new Date(analytics.generated_at).toLocaleTimeString()}
+            Updated {new Date(analytics.generated_at).toLocaleTimeString("en-IN", { timeZone:"Asia/Kolkata",
+              hour: "2-digit", minute: "2-digit", second: "2-digit"
+             })}
           </span>
         )}
       </div>
