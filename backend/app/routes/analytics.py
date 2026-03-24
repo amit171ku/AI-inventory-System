@@ -6,7 +6,7 @@ from ..models import Product, Order
 from datetime import datetime, timedelta
 from collections import defaultdict
 import calendar
-
+import pytz
 router = APIRouter(
     prefix="/analytics",
     tags=["Analytics"]
@@ -28,7 +28,7 @@ def get_analytics(db: Session = Depends(get_db)):
     if not products:
         raise HTTPException(status_code=404, detail="No products found")
 
-    now = datetime.utcnow()
+    now = datetime.now(pytz.timezone("Asia/Kolkata"))
     cutoff = now - timedelta(days=365)
 
     # ── Database-Level Aggregations (Saves Memory) ─────────────────────────
