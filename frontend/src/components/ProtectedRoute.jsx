@@ -2,13 +2,25 @@ import { Navigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 function ProtectedRoute({ children, roles = null }) {
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
 
-  // not logged in
-  if (!user) return <Navigate to="/login" replace />;
+  // Wait until authentication is restored
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
-  // role check — agar roles prop diya hai
-  if (roles && !roles.includes((user.role || "").toLowerCase())) {
+  // Not logged in
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
+
+  // Role check
+  if (
+    roles &&
+    !roles.map((r) => r.toLowerCase()).includes(
+      (user.role || "").toLowerCase()
+    )
+  ) {
     return <Navigate to="/dashboard" replace />;
   }
 
