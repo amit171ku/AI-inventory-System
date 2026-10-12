@@ -12,8 +12,7 @@
 
 ## 🌐 Live Demo
 
-🔗 **Frontend:** [https://your-app.vercel.app](https://your-app.vercel.app)  
-🔗 **Backend API:** [https://your-backend.render.com/docs](https://your-backend.render.com/docs)
+🔗 **Live link:** [https://your-app.vercel.app](https://ai-in.vercel.app/)  
 
 ---
 
