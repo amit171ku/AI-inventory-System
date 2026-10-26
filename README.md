@@ -12,7 +12,7 @@
 
 ## 🌐 Live Demo
 
-🔗 **Live link:** [https://your-app.vercel.app](https://ai-in.vercel.app/)  
+🔗 **Live link:(https://ai-in.vercel.app/)  
 
 ---
 
